@@ -1,0 +1,15 @@
+{
+  "name": "timezone-offset",
+  "version": "0.0.0",
+  "description": "Converts timezoned date to local time or back",
+  "main": "index.js",
+  "scripts": {
+    "test": "tape test/* "
+  },
+  "author": "krazylek (http://pohl.fr)",
+  "license": "MIT",
+  "dependencies": {},
+  "devDependencies": {
+    "tape": "^4.8.0"
+  }
+}
