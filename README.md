@@ -72,7 +72,7 @@ console.log(timezoneShift.convert(dateInfo, { from: '+03:00' }))
 
 // to check:
 console.log(timezoneShift.convert(dateInfo, { from: '+03:00', to: '+11:00' }))
-== => 2017-01-01T01:00:00.000Z
+// => 2017-01-01T01:00:00.000Z
 
 // even simpler (from timezone is infered from date string):
 console.log(timezoneShift.convert(dateInfo)) 
