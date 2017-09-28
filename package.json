@@ -1,12 +1,19 @@
 {
-  "name": "timezone-offset",
+  "name": "shift-timezone-offset",
   "version": "0.0.1",
-  "description": "Converts timezoned date to local time or back",
+  "description": "Shift timezoned dates to local time or any other timezone.",
   "main": "index.js",
   "scripts": {
-    "test": "tape test/* "
+    "test": "tape test/*.js"
   },
   "author": "krazylek (http://pohl.fr)",
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/krazylek/shift-timezone-offset.git"
+  },
+  "bugs": {
+    "url": "https://github.com/krazylek/shift-timezone-offset/issues"
+  },
   "license": "MIT",
   "dependencies": {},
   "devDependencies": {
