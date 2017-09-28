@@ -1,4 +1,4 @@
-# timezone-offsets
+# shift-timezone-offsets
 
 Converts timezoned dates to local time or any other timezone.
 
@@ -88,7 +88,7 @@ var timezoneShift = require('timezone-offset')
 
 ### `var converter = timezoneShift(validTimezone)`
 
-* `validTimezone` - valid ISO 8601 date string or timezone string: `'+05:00'`, `'-1100'` or `'2017-01-01T12:00:00+05:00'`.
+* `validTimezone` - valid ISO 8601 date string or timezone string: `'+05:00'`, `'-1100'` or `'2017-01-01T12:00:00+05:00'`. An offset is valid as well: `-240` in place of `'+04:00`.
 
 ### `converter.toLocal(date)`
 
