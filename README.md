@@ -22,7 +22,7 @@ Working in local time:
 ```js
 // process.env.TZ = 'Pacific/Noumea' // local timezone
 
-var timezoneOffset = require('../')
+var timezoneShift = require('../')
 var dateInfo = '2017-01-01T00:00:00+03:00'
 var initialDate = new Date(dateInfo)
 
@@ -32,7 +32,7 @@ console.log(initialDate.getHours())
 console.log(initialDate.getTime() / 1000)
 // => 1483218000
 
-var converter = timezoneOffset('+03:00') // timezoneOffset(dateInfo) works as well
+var converter = timezoneShift('+03:00') // timezoneShift(dateInfo) works as well
 var localDate = converter.toLocal(initialDate)
 
 console.log(localDate.getHours())
@@ -54,7 +54,7 @@ console.log(backToInitialDate.getTime() / 1000)
 
 When only one operation is needed, there is a shortcut notation:
 
-```
+```js
 var timezoneShift = require('../')
 var dateInfo = '2017-01-01T12:00:00+03:00'
 
@@ -83,10 +83,10 @@ console.log(timezoneShift.convert(dateInfo))
 # api
 
 ```js
-var timezoneOffset = require('timezone-offset')
+var timezoneShift = require('timezone-offset')
 ```
 
-## `var converter = timezoneOffset(validTimezone)`
+### `var converter = timezoneShift(validTimezone)`
 
 * `validTimezone` - valid ISO 8601 date string or timezone string: `'+05:00'`, `'-1100'` or `'2017-01-01T12:00:00+05:00'`.
 
@@ -114,7 +114,7 @@ Returns a new `Date` object.
 
 ### `converter.offset`
 
-Get the timezone offset from UTC in minutes (similar to `Date.prototype.getTimezoneOffset`).
+Timezone offset from UTC in minutes (similar to `Date.prototype.getTimezoneOffset`).
 
 ### `converter.timeShift`
 
@@ -129,5 +129,5 @@ MIT
 # install
 
 ```
-npm install trim-dates
+npm install shift-timezone-offset
 ```
