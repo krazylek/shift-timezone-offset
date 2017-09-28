@@ -1,6 +1,6 @@
 {
   "name": "shift-timezone-offset",
-  "version": "0.0.1",
+  "version": "0.0.2",
   "description": "Shift timezoned dates to local time or any other timezone.",
   "main": "index.js",
   "scripts": {
