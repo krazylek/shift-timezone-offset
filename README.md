@@ -1,4 +1,4 @@
-# shift-timezone-offsets
+# shift-timezone-offset
 
 Converts timezoned dates to local time or any other timezone.
 
@@ -61,20 +61,20 @@ var dateInfo = '2017-01-01T12:00:00+03:00'
 console.log(new Date(dateInfo))
 // => 2017-01-01T09:00:00.000Z
 
-// shifting 5 hours
+// 5 hours timezone shift
 console.log(timezoneShift.convert(dateInfo, { from: '+03:00', to: '+08:00' }))
 // => 2017-01-01T04:00:00.000Z
 
 // to local (all 3 are similar)
-// local timezone is default:
+// "to" defaults to local timezone:
 console.log(timezoneShift.convert(dateInfo, { from: '+03:00' }))
 // => 2017-01-01T01:00:00.000Z
 
-// to check:
+// to be sure:
 console.log(timezoneShift.convert(dateInfo, { from: '+03:00', to: '+11:00' }))
 // => 2017-01-01T01:00:00.000Z
 
-// even simpler (from timezone is infered from date string):
+// even simpler ("from" timezone is infered from date string):
 console.log(timezoneShift.convert(dateInfo)) 
 // => 2017-01-01T01:00:00.000Z
 ```
@@ -86,7 +86,7 @@ console.log(timezoneShift.convert(dateInfo))
 var timezoneShift = require('timezone-offset')
 ```
 
-### `var converter = timezoneShift(validTimezone)`
+## `var converter = timezoneShift(validTimezone)`
 
 * `validTimezone` - valid ISO 8601 date string or timezone string: `'+05:00'`, `'-1100'` or `'2017-01-01T12:00:00+05:00'`. An offset is valid as well: `-240` in place of `'+04:00`.
 
@@ -119,6 +119,14 @@ Timezone offset from UTC in minutes (similar to `Date.prototype.getTimezoneOffse
 ### `converter.timeShift`
 
 The full shift in minutes required to convert the dates to the local timezone.
+
+
+## `timezoneShift.convert(date, zones)`
+
+* `date` - any valid value for the `Date` object constructor.
+* `zone` - object containing initial and final timezones:
+  * `zones.from` - valid timezone info. Could be infered if `date` is an ISO date string.
+  * `zones.to` - default: local timezone. Valid timezone info.
 
 
 # license
