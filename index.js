@@ -1,4 +1,5 @@
 var localOffset = new Date().getTimezoneOffset()
+var maxOffset = 14 * 60
 var parseOffset = require('./parse-time-offset')
 
 module.exports = converter
@@ -40,7 +41,7 @@ function getOffset(timezoneData, defaultOffset) {
     return offset !== null ? offset : defaultOffset  
   }
 
-  if(typeof timezoneData == 'number')
+  if(typeof timezoneData == 'number' && Math.abs(timezoneData) <= maxOffset)
     return timezoneData
   
   return defaultOffset

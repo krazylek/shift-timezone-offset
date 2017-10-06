@@ -19,6 +19,17 @@ test('no timezone returns local value', function (t) {
   t.end()
 })
 
+test('timezone could be a numeric offset', function (t) {
+  var offset = -120
+  t.equal(timezoneShift(offset).offset, offset)
+  t.end()
+})
+
+test('too big offset ( > 14 hours) returns local offset', function (t) {
+  var bigOffset = -15*60
+  t.equal(timezoneShift(bigOffset).offset, new Date().getTimezoneOffset())
+  t.end()
+})
 
 test('converting from a negative timezone', function(t) {
   var tz = '-03:00'
@@ -98,7 +109,7 @@ test('converting timezone to another timezone shortcut', function(t) {
   t.end()
 })
 
-test('working with offset', function(t) {
+test('working with numeric offset', function(t) {
   var fromTz = -240
   var testDateStr = '2017-01-01T02:00:00+04:00'
   var date = new Date(testDateStr)
